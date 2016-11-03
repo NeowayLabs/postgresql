@@ -2219,6 +2219,9 @@ main(int argc, char **argv)
 	/*
 	 * Disallow running as root, to forestall any possible security holes.
 	 */
+
+	/* WTF ? */
+#if 0
 #ifndef WIN32
 	if (geteuid() == 0)
 	{
@@ -2229,6 +2232,7 @@ main(int argc, char **argv)
 					 progname);
 		exit(1);
 	}
+#endif
 #endif
 
 	env_wait = getenv("PGCTLTIMEOUT");
